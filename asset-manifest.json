@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ikranjec99.github.io/static/css/main.f855e6bc.css",
+    "main.js": "/ikranjec99.github.io/static/js/main.e40f14e4.js",
+    "static/js/453.6545556d.chunk.js": "/ikranjec99.github.io/static/js/453.6545556d.chunk.js",
+    "index.html": "/ikranjec99.github.io/index.html",
+    "main.f855e6bc.css.map": "/ikranjec99.github.io/static/css/main.f855e6bc.css.map",
+    "main.e40f14e4.js.map": "/ikranjec99.github.io/static/js/main.e40f14e4.js.map",
+    "453.6545556d.chunk.js.map": "/ikranjec99.github.io/static/js/453.6545556d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.e40f14e4.js"
+  ]
+}
