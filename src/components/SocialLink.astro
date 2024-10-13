@@ -5,12 +5,14 @@ import type { SocialLink } from "../types/config";
 type Props = SocialLink;
 
 const { title, url, icon, external } = Astro.props;
+
+const target = external ? "_blank" : "_self";
 ---
 
 <a
   href={url}
   class="flex items-center gap-3 opacity-60 group-hover:opacity-30 hover:!opacity-60 transition-opacity"
-  target={external ? "_blank" : "_self"}
+  target={target}
 >
   <Icon name={icon} width={25} height={25} />
   <div>

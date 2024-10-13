@@ -8,11 +8,21 @@ interface Props {
   noAnchor?: boolean;
 }
 
-const { text, href, external, noAnchor } = Astro.props;
+const { external, href, noAnchor, text } = Astro.props;
 ---
 
 {
-  !noAnchor ? (
+  noAnchor && (
+    <div class="flex items-center gap-2 opacity-60 group-hover:opacity-30 hover:!opacity-60 transition-opacity">
+      <div class="rotate-45">
+        <Icon name="mdi:arrow-up" />
+      </div>
+      <span>{text}</span>
+    </div>
+  )
+}
+{
+  !noAnchor && (
     <a
       href={href}
       target={external ? "_blank" : "_self"}
@@ -23,12 +33,5 @@ const { text, href, external, noAnchor } = Astro.props;
       </div>
       <span>{text}</span>
     </a>
-  ) : (
-    <div class="flex items-center gap-2 opacity-60 group-hover:opacity-30 hover:!opacity-60 transition-opacity">
-      <div class="rotate-45">
-        <Icon name="mdi:arrow-up" />
-      </div>
-      <span>{text}</span>
-    </div>
   )
 }
