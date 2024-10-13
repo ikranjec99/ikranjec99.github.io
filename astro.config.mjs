@@ -19,7 +19,7 @@ export default defineConfig({
     remarkPlugins: [remarkReadingTime],
   },
   output: "static",
-  outDir: "./docs",
+  outDir: "./dist",
   // Github pages config
   site: "https://ikranjec99.github.io",
 });
