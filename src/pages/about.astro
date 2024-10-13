@@ -1,10 +1,12 @@
 ---
+import { Markdown } from "@astropub/md";
+
 import { Image } from "astro:assets";
-import Layout from "../layouts/Layout.astro";
+
 import { aboutPageContent } from "../config";
 import ResumeItem from "../components/ResumeItem.astro";
-import { Markdown } from "@astropub/md";
 import SocialLinkBox from "../components/SocialLinkBox.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout seo={aboutPageContent.seo}>
@@ -38,7 +40,15 @@ import SocialLinkBox from "../components/SocialLinkBox.astro";
         <Markdown of={aboutPageContent.work.description} />
       </div>
       <div class="grid grid-cols-1 group">
-        {aboutPageContent.work.items.map((item) => <ResumeItem {...item} />)}
+        {
+          aboutPageContent.work.items.map((item) => (
+            <ResumeItem
+              company={item.company}
+              date={item.date}
+              title={item.title}
+            />
+          ))
+        }
       </div>
     </div>
   </section>
@@ -51,7 +61,12 @@ import SocialLinkBox from "../components/SocialLinkBox.astro";
       <div class="grid grid-cols-2 gap-2 group">
         {
           aboutPageContent.connect.links.map((item) => (
-            <SocialLinkBox {...item} />
+            <SocialLinkBox
+              title={item.title}
+              url={item.url}
+              icon={item.icon}
+              external={item.external}
+            />
           ))
         }
       </div>
