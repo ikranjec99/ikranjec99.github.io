@@ -143,7 +143,7 @@ Facere quibusdam reiciendis, distinctio sunt praesentium error accusantium conse
     ],
   },
   connect: {
-    description: `I'm always interested in meeting new people and learning new things. Feel free to connect with me on any of the following platforms.`,
+    description: `Feel free to connect with me on any of the following platforms.`,
     links: socialLinks,
   },
 };
