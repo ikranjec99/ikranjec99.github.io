@@ -3,10 +3,11 @@ import { Markdown } from "@astropub/md";
 
 import { Image } from "astro:assets";
 
-import { aboutPageContent } from "../config";
 import ResumeItem from "../components/ResumeItem.astro";
 import SocialLinkBox from "../components/SocialLinkBox.astro";
 import Layout from "../layouts/Layout.astro";
+
+import { aboutPageContent } from "../config/about";
 ---
 
 <Layout seo={aboutPageContent.seo}>
