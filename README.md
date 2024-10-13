@@ -1,3 +1,3 @@
 # ikranjec99.github.io
 
-[Portfolio project](https://ikranjec99.github.io/portfolio/)
+[Portfolio project](https://ikranjec99.github.io)
