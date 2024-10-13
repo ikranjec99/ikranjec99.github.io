@@ -11,11 +11,15 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  build: {
+    assets: "astro",
+  },
   integrations: [tailwind(), icon()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
-  output: "server",
+  output: "static",
+  outDir: "./docs",
   // Github pages config
   site: "https://ikranjec99.github.io",
 });
