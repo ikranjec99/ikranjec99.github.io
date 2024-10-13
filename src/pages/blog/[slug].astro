@@ -1,11 +1,41 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import { Image } from "astro:assets";
 import { identity } from "../../config";
 
 const { slug } = Astro.params;
 const entry = await getEntry("posts", slug as string);
+
+// Define the function to generate static paths
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  
+  return posts.map(post => ({
+    params: { slug: post.slug },
+  }));
+}
+
+export async function get({ params }) {
+  const { slug } = params;
+  const entry = await getEntry('posts', slug);
+
+  if (!entry) {
+    return {
+      status: 404,
+    };
+  }
+
+  const { Content, headings, remarkPluginFrontmatter } = await entry.render();
+
+  return {
+    props: {
+      entry,
+      Content,
+      remarkPluginFrontmatter,
+    },
+  };
+}
 
 if (!entry) {
   return Astro.redirect("/blog");
