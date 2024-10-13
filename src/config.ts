@@ -102,7 +102,7 @@ Facere quibusdam reiciendis, distinctio sunt praesentium error accusantium conse
     },
   },
   work: {
-    description: `I've worked with a variety of technologies and tools to build cool things. Here are some of the projects I've worked on.`, // Markdown is supported
+    description: `I've worked with a variety of technologies and tools to build cool things.`, // Markdown is supported
     items: [
       {
         title: "Software Engineer",
