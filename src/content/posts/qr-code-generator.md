@@ -20,6 +20,10 @@ My family members always had problems with remembering passwords for home WiFi n
 - **Support for many use cases**: Currently, [QRCoder](https://github.com/codebude/QRCoder) supports 21 use cases and implementing your own, custom payload generator is quite easy. 
 
 # Getting started
+
+## My implementation of QRCoder library as .NET 8 API
+✨[Github repo](https://github.com/ikranjec99/qr-code-generator)
+
 ## Install QRCode library
 
 If you’re starting a new project, you can install the QRCoder NuGet package by running the following command:
