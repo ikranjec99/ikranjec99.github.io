@@ -148,7 +148,7 @@ public class QrCodeGeneratorController : ControllerBase
 }
 ```
 # Conclusion
-To sum things up, is this the best implementation of QRCoder library? Absolutely not! What I am suggesting is - if you have similar use cases as I did then feel free to try my example project which I linked in this post and try to write something better and more suitable for you.
+To sum things up, is this the best implementation of QRCoder library? Absolutely not, it is absolute 💩! What I am suggesting is - if you have similar use cases as I did then feel free to try my example project which I linked in this post and try to write something better and more suitable for you.
 Things like logging, monitoring and request validation were not done properly in this project and you should **DEFINITELY** do this in your production ready code.
 
 So should you use QRCoder for your next adventure with QR codes? Absolutely, it is an excelent library which is highly customizable, lightweight and has 0 external dependencies.
