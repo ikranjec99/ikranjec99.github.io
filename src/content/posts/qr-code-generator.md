@@ -3,7 +3,7 @@ title: "Discover how to generate QR codes effortlessly with a .NET 8 API 🧑�
 pubDate: 2025-01-25 #Y-M-D
 description: "Learn how to generate QR codes seamlessly using .NET 8 and the QRCoder library. Simple, fast, and efficient! 🧑🏻‍💻🚀"
 author: "Ivan Kranjec"
-image: { url: "/post-1.jpg", alt: "QR code meme" }
+image: { url: "/blogs/qr-code-generator/qr-code-meme.jpg", alt: "QR code meme" }
 ---
 
 # Why fiddling with QR codes in 2025?

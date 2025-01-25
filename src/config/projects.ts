@@ -11,25 +11,11 @@ export const projectsPageContent: ProjectPageContent = {
     subtitle: "Check out what I've been working on.",
     projects: [
         {
-            title: "Project 1",
-            description: "Project 1 Description",
-            image: "/demo-2.jpg",
-            year: "2024",
-            url: "https://github.com/ikranjec99",
-        },
-        {
-            title: "Project 1",
-            description: "Project 1 Description",
-            image: "/demo-2.jpg",
-            year: "2024",
-            url: "https://github.com/ikranjec99",
-        },
-        {
-            title: "Project 1",
-            description: "Project 1 Description",
-            image: "/demo-2.jpg",
-            year: "2024",
-            url: "https://github.com/ikranjec99",
-        },
+            title: "QR code generator API in .NET 8",
+            description: "Learn how to generate QR codes seamlessly using .NET 8 and the QRCoder library. Simple, fast, and efficient! 🧑🏻‍💻🚀",
+            image: "/projects/qr-code-generator/qr-code.png",
+            year: "2025",
+            url: "https://github.com/ikranjec99/qr-code-generator",
+        }
     ],
 };
