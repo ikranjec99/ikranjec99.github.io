@@ -12,10 +12,17 @@ export const projectsPageContent: ProjectPageContent = {
     projects: [
         {
             title: "QR code generator API in .NET 8",
-            description: "Learn how to generate QR codes seamlessly using .NET 8 and the QRCoder library. Simple, fast, and efficient! 🧑🏻‍💻🚀",
+            description: "Learn how to generate QR codes seamlessly using .NET 8 and the QRCoder library. Simple, fast, and efficient!",
             image: "/projects/qr-code-generator/qr-code.png",
             year: "2025",
             url: "https://github.com/ikranjec99/qr-code-generator",
+        },
+        {
+            title: "LLaMA in .NET 8",
+            description: "Learn how to leverage Meta’s LLaMA LLM for intelligent, context-aware AI interactions in .NET 8.",
+            image: "/projects/llama-core/llama.webp",
+            year: "2025",
+            url: "https://github.com/ikranjec99/llama-core/tree/master"
         }
     ],
 };
