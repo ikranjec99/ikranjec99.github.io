@@ -85,4 +85,4 @@ public static class ApplicationHandler
 }
 ```
 
-<img src="/public/blogs/llama-core/chat.png" alt="Example of chat ">
+<img src="/blogs/llama-core/chat.png" alt="Example of chat">
