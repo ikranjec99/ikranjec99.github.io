@@ -8,7 +8,7 @@ import type {
 const details: Details = {
     email: 'ivan.kranjec95@gmail.com',
     fullName: "Ivan Kranjec",
-    linkedIn: 'https://www.linkedin.com/in/ivan-kranjec-96352a1b7/',
+    linkedIn: 'https://www.linkedin.com/in/ikranjec99',
     github: 'https://github.com/ikranjec99',
 };
 
