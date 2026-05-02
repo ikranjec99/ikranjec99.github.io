@@ -23,6 +23,13 @@ export const projectsPageContent: ProjectPageContent = {
             image: "/projects/llama-core/llama.webp",
             year: "2025",
             url: "https://github.com/ikranjec99/llama-core/tree/master"
+        },
+        {
+            title: "I Got a Check Engine Light. So I Wrote a OBDeleven Log Parser.",
+            description: "I got a check engine light. So I decided to create a powerful log parser for OBDeleven, designed to extract and analyze data from automotive logs with ease.",
+            image: "/projects/obdeleven-log-parser/log.png",
+            year: "2026",
+            url: "https://github.com/ikranjec99/obdeleven-log-parser"
         }
     ],
 };
