@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 import Layout from "../../layouts/Layout.astro";
 import { blogPageContent } from "../../config";
@@ -11,10 +11,12 @@ posts.sort((a, b) => {
   const dateB = new Date(b.data.pubDate).getTime();
   return dateB - dateA;
 });
-for (const post of posts) {
-  const { remarkPluginFrontmatter } = await post.render();
-  post.data.readingTime = remarkPluginFrontmatter.minutesRead;
-}
+const postsWithReadingTime = await Promise.all(
+  posts.map(async (post) => {
+    const { remarkPluginFrontmatter } = await render(post);
+    return { post, readingTime: remarkPluginFrontmatter.minutesRead };
+  }),
+);
 ---
 
 <Layout seo={blogPageContent.seo}>
@@ -24,9 +26,9 @@ for (const post of posts) {
 
     <div class="grid grid-cols-1 gap-10 sm:gap-6 mb-10">
       {
-        posts.map((post) => (
+        postsWithReadingTime.map(({ post, readingTime }) => (
           <a
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.id}`}
             class=" sm:flex sm:flex-row-reverse sm:justify-between sm:gap-6 post"
           >
             <Image
@@ -39,7 +41,7 @@ for (const post of posts) {
             <div class="mt-4 sm:my-auto">
               <p class="opacity-60 mb-2">
                 {post.data.pubDate.toLocaleDateString()} ·{" "}
-                {post.data.readingTime}
+                {readingTime}
               </p>
               <h3 class="font-medium hover-underline">{post.data.title}</h3>
               <p class="text-sm opacity-60 mt-2 mb-3">
