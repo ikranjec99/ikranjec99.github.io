@@ -23,10 +23,10 @@ The exported file is plain text, structured but not machine-friendly. It looks s
 OBDeleven vehicle history log
 Date: 2026-04-18 14:17:58
 
-    VIN: WVWZZZ3CZNE057729
-    Car: Volkswagen
-    Year: 2022
-    Engine: DTSB  kW ( hp) l
+    VIN: WVWWF7AU9JW062918
+    Car: Volkswagen Golf R
+    Year: 2018
+    Engine: DJHA 228 kW (310 hp) 2L
     Mileage: 131921 km
 
 ---------------------------------------------------------------
@@ -145,9 +145,9 @@ Which gives you something you can actually pipe into `jq`, store in a database, 
 {
   "LogDate": "2026-04-18T14:17:58",
   "Vehicle": {
-    "Vin": "WVWZZZ3CZNE057729",
-    "Car": "Volkswagen",
-    "Year": 2022,
+    "Vin": "WVWWF7AU9JW062918",
+    "Car": "Volkswagen Golf R",
+    "Year": 2018,
     "Mileage": 131921
   },
   "Modules": [
