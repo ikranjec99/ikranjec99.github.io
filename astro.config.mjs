@@ -1,5 +1,3 @@
-import tailwind from "@astrojs/tailwind";
-
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
@@ -10,7 +8,7 @@ export default defineConfig({
   build: {
     assets: "astro",
   },
-  integrations: [tailwind(), icon()],
+  integrations: [icon()],
   markdown: {
     remarkPlugins: [remarkReadingTime],
   },
