@@ -3,7 +3,7 @@ title: "Building a simple .NET Core application with Meta’s LLaMA: Unlocking C
 pubDate: 2025-03-01 #Y-M-D
 description: "Learn how to leverage Meta’s LLaMA LLM for intelligent, context-aware AI interactions."
 author: "Ivan Kranjec"
-image: { url: "/blogs/llama-core/llama-core.jpg", alt: "Three llama's at farm" }
+image: { url: "/blogs/llama-core/llama-core.webp", alt: "Three llama's at farm" }
 ---
 
 # What is LLM?
@@ -85,4 +85,4 @@ public static class ApplicationHandler
 }
 ```
 
-<img src="/blogs/llama-core/chat.png" alt="Example of chat">
+<img src="/blogs/llama-core/chat.webp" alt="Example of chat">
