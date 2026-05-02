@@ -13,14 +13,14 @@ export const projectsPageContent: ProjectPageContent = {
         {
             title: "I Got a Check Engine Light. So I Wrote a OBDeleven Log Parser.",
             description: "I got a check engine light. So I decided to create a powerful log parser for OBDeleven, designed to extract and analyze data from automotive logs with ease.",
-            image: "/projects/obdeleven-log-parser/log.png",
+            image: "/projects/obdeleven-log-parser/log.webp",
             year: "2026",
             url: "https://github.com/ikranjec99/obdeleven-log-parser"
         },
         {
             title: "QR code generator API in .NET 8",
             description: "Learn how to generate QR codes seamlessly using .NET 8 and the QRCoder library. Simple, fast, and efficient!",
-            image: "/projects/qr-code-generator/qr-code.png",
+            image: "/projects/qr-code-generator/qr-code.webp",
             year: "2025",
             url: "https://github.com/ikranjec99/qr-code-generator",
         },

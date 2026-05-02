@@ -10,11 +10,11 @@ export const aboutPageContent: AboutPageContent = {
         My goal is to always deliver clean, maintainable code and create products that provide real value to users.`,
         image_l: {
             alt: "Left Picture",
-            url: "/demo-1.jpg",
+            url: "/demo-1.webp",
         },
         image_r: {
             alt: "Right Picture",
-            url: "/demo-1.jpg",
+            url: "/demo-2.webp",
         },
     },
     seo: {
