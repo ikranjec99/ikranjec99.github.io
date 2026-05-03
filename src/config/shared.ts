@@ -14,7 +14,7 @@ const details: Details = {
 
 export const identity: Identity = {
     name: details.fullName,
-    logo: "/logo.webp",
+    logo: "/avatar.webp",
     email: details.email,
 };
 
