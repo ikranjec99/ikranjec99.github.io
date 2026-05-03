@@ -6,12 +6,12 @@ export const homePageContent: HomePageContent = {
     seo: {
         title: "Ivan Kranjec | Portfolio",
         description:
-            "Full time software engineer from Croatia who loves building cool things using code.",
+            "Software engineer from Croatia with a passion for building scalable applications and solving real-world problems through code.",
         image: identity.logo,
     },
     role: "Software Engineer",
     description:
-        "Full time software engineer from Croatia who loves building cool things using code.",
+        "Software engineer from Croatia with a passion for building scalable applications and solving real-world problems through code.",
     socialLinks: socialLinks,
     links: [
         {
