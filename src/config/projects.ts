@@ -5,10 +5,10 @@ import type { ProjectPageContent } from "../types/config";
 export const projectsPageContent: ProjectPageContent = {
     seo: {
         title: "Projects | Ivan Kranjec",
-        description: "Check out what I've been working on.",
+        description: "A selection of things I've built.",
         image: identity.logo,
     },
-    subtitle: "Check out what I've been working on.",
+    subtitle: "A selection of things I've built.",
     projects: [
         {
             title: "I Got a Check Engine Light. So I Wrote a OBDeleven Log Parser.",

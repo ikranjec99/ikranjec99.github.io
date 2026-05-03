@@ -4,10 +4,8 @@ import type { AboutPageContent } from '../types/config';
 // About (/about)
 export const aboutPageContent: AboutPageContent = {
     about: {
-        description: `I'm Ivan Kranjec, a full time software engineer from Croatia who loves building cool things using code.<br/><br/>
-        I enjoy working across the full stack, whether it's developing responsive user interfaces with React or architecting robust backend systems using .NET Core. 
-        <br/><br/>
-        My goal is to always deliver clean, maintainable code and create products that provide real value to users.`,
+        description: `I'm a full-stack software engineer with a focus on building reliable, well-crafted web applications.<br/>I work primarily with React on the frontend and .NET Core on the backend, and I care a lot about the details — architecture decisions, code quality, and the user experience at the end of it all.
+<br/>On this blog, I write about what I'm working on, engineering challenges worth sharing, and topics I find myself thinking about deeply.`,
         image_l: {
             alt: "Left Picture",
             url: "/demo-1.webp",
@@ -23,9 +21,9 @@ export const aboutPageContent: AboutPageContent = {
             "Full time software engineer from Croatia who loves building cool things using code.",
         image: identity.logo,
     },
-    subtitle: "Some information about myself",
+    subtitle: "",
     work: {
-        description: `I've worked with a variety of technologies and tools to build cool things.`,
+        description: `I work across the full stack, choosing tools that fit the problem rather than just the trend.`,
         items: [
             {
                 title: "Software Engineer",
@@ -66,7 +64,7 @@ export const aboutPageContent: AboutPageContent = {
         ],
     },
     connect: {
-        description: `Feel free to connect with me on any of the following platforms.`,
+        description: `Let's connect:`,
         links: socialLinks,
     },
 };

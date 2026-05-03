@@ -5,8 +5,8 @@ import type { BlogPageContent } from "../types/config";
 export const blogPageContent: BlogPageContent = {
     seo: {
         title: "Blog | Ivan Kranjec",
-        description: "Thoughts, stories and ideas.",
+        description: "Writing on software engineering and technical decision-making.",
         image: identity.logo,
     },
-    subtitle: "Thoughts, stories and ideas.",
+    subtitle: "Writing on software engineering and technical decision-making.",
 };
