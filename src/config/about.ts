@@ -31,7 +31,7 @@ export const aboutPageContent: AboutPageContent = {
                 title: "Software Engineer",
                 company: {
                     name: "Infobip",
-                    image: "/logo.webp",
+                    image: "/avatar.webp",
                     url: "https://github.com/ikranjec99",
                 },
                 date: "October 2023 - Present",
@@ -40,7 +40,7 @@ export const aboutPageContent: AboutPageContent = {
                 title: "Junior Software Engineer",
                 company: {
                     name: "Infobip",
-                    image: "/logo.webp",
+                    image: "/avatar.webp",
                     url: "https://github.com/ikranjec99",
                 },
                 date: "September 2022 - October 2023",
@@ -49,7 +49,7 @@ export const aboutPageContent: AboutPageContent = {
                 title: "Junior Software Engineer",
                 company: {
                     name: "Combis",
-                    image: "/logo.webp",
+                    image: "/avatar.webp",
                     url: "https://www.combis.hr/",
                 },
                 date: "October 2021 - September 2022",
@@ -58,7 +58,7 @@ export const aboutPageContent: AboutPageContent = {
                 title: "Junior Software Engineer Intern",
                 company: {
                     name: "Combis",
-                    image: "/logo.webp",
+                    image: "/avatar.webp",
                     url: "https://www.combis.hr/",
                 },
                 date: "August 2020 - October 2021",
