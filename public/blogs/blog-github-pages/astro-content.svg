@@ -1,0 +1,34 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0b1020"/>
+  <rect x="80" y="74" width="1040" height="527" rx="30" fill="#111a31" stroke="#26365f" stroke-width="3"/>
+  <text x="120" y="143" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Content to Static Site</text>
+  <text x="120" y="184" fill="#9fb3d8" font-family="Arial, Helvetica, sans-serif" font-size="23">Markdown posts and Astro components become fast static pages.</text>
+
+  <rect x="120" y="250" width="245" height="215" rx="18" fill="#202c4d" stroke="#34456f" stroke-width="2"/>
+  <rect x="194.5" y="288" width="96" height="18" rx="9" fill="#8cc8ff"/>
+  <rect x="163.5" y="332" width="158" height="14" rx="7" fill="#64769e"/>
+  <rect x="179.5" y="363" width="126" height="14" rx="7" fill="#64769e"/>
+  <rect x="154" y="394" width="177" height="14" rx="7" fill="#64769e"/>
+  <text x="242.5" y="444" text-anchor="middle" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Markdown</text>
+
+  <path d="M395 358H475" stroke="#ff5d01" stroke-width="10" stroke-linecap="round"/>
+  <path d="M448 329L477 358L448 387" stroke="#ff5d01" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="506" y="250" width="245" height="215" rx="18" fill="#202c4d" stroke="#34456f" stroke-width="2"/>
+  <path d="M557.5 384L591.5 288L625.5 384H602.5L591.5 351L580.5 384H557.5Z" fill="#ff5d01"/>
+  <path d="M636.5 384L667.5 318L699.5 384H677.5L667.5 360L658.5 384H636.5Z" fill="#f9d423"/>
+  <text x="628.5" y="444" text-anchor="middle" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Astro Build</text>
+
+  <path d="M782 358H862" stroke="#17c964" stroke-width="10" stroke-linecap="round"/>
+  <path d="M835 329L864 358L835 387" stroke="#17c964" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <rect x="893" y="250" width="187" height="215" rx="18" fill="#202c4d" stroke="#34456f" stroke-width="2"/>
+  <rect x="932" y="286" width="109" height="116" rx="12" fill="#0f172a" stroke="#8cc8ff" stroke-width="4"/>
+  <rect x="956" y="311" width="61" height="12" rx="6" fill="#8cc8ff"/>
+  <rect x="956" y="344" width="61" height="12" rx="6" fill="#64769e"/>
+  <rect x="956" y="377" width="43" height="12" rx="6" fill="#64769e"/>
+  <text x="986.5" y="444" text-anchor="middle" fill="#f8fafc" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Static HTML</text>
+
+  <path d="M120 530H1080" stroke="#26365f" stroke-width="2"/>
+  <text x="120" y="565" fill="#9fb3d8" font-family="Arial, Helvetica, sans-serif" font-size="22">The final output can be hosted without a running application server.</text>
+</svg>
