@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Homelab Foundations cover</title>
+  <desc id="desc">A compact server connected to a router, domain records, and self-hosted services.</desc>
+  <rect width="1200" height="630" fill="#101318"/>
+  <rect x="78" y="72" width="1044" height="486" rx="28" fill="#171c23" stroke="#303a46" stroke-width="2"/>
+  <path d="M0 498 C238 420 418 560 660 486 C846 430 1014 438 1200 360 L1200 630 L0 630 Z" fill="#1f6feb" opacity=".16"/>
+  <path d="M0 420 C220 350 420 430 610 374 C802 318 992 300 1200 238" fill="none" stroke="#36c5f0" stroke-width="4" opacity=".34"/>
+  <g transform="translate(432 166)">
+    <rect x="0" y="0" width="336" height="224" rx="18" fill="#0f141b" stroke="#566779" stroke-width="3"/>
+    <rect x="30" y="38" width="276" height="52" rx="10" fill="#222b35"/>
+    <circle cx="62" cy="64" r="12" fill="#3fb950"/>
+    <rect x="94" y="55" width="154" height="18" rx="9" fill="#8b949e"/>
+    <rect x="30" y="118" width="276" height="52" rx="10" fill="#222b35"/>
+    <circle cx="62" cy="144" r="12" fill="#f2cc60"/>
+    <rect x="94" y="135" width="188" height="18" rx="9" fill="#8b949e"/>
+    <rect x="38" y="200" width="260" height="12" rx="6" fill="#36c5f0" opacity=".42"/>
+  </g>
+  <g fill="#222b35" stroke="#566779" stroke-width="2">
+    <rect x="168" y="142" width="192" height="72" rx="14"/>
+    <rect x="164" y="282" width="198" height="72" rx="14"/>
+    <rect x="838" y="142" width="198" height="72" rx="14"/>
+    <rect x="838" y="282" width="198" height="72" rx="14"/>
+  </g>
+  <g font-family="Inter, Arial, sans-serif" font-size="24" fill="#f0f6fc" font-weight="700">
+    <text x="198" y="187">Proxmox</text>
+    <text x="192" y="327">Cloudflare</text>
+    <text x="866" y="187">Reverse proxy</text>
+    <text x="866" y="327">WireGuard</text>
+  </g>
+  <g stroke="#36c5f0" stroke-width="4" stroke-linecap="round" opacity=".65">
+    <path d="M360 178 H432"/>
+    <path d="M362 318 H432"/>
+    <path d="M768 178 H838"/>
+    <path d="M768 318 H838"/>
+  </g>
+  <text x="120" y="490" font-family="Inter, Arial, sans-serif" font-size="54" fill="#f0f6fc" font-weight="800">Homelab Foundations</text>
+  <text x="122" y="532" font-family="Inter, Arial, sans-serif" font-size="24" fill="#aab4c0">Starting my self-hosting journey with Proxmox, Cloudflare, and a tiny ThinkCentre</text>
+</svg>
