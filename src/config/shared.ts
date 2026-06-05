@@ -6,7 +6,6 @@ import type {
 } from "../types/config";
 
 const details: Details = {
-    email: 'ivan.kranjec95@gmail.com',
     fullName: "Ivan Kranjec",
     linkedIn: 'https://www.linkedin.com/in/ikranjec99',
     github: 'https://github.com/ikranjec99',
@@ -14,8 +13,7 @@ const details: Details = {
 
 export const identity: Identity = {
     name: details.fullName,
-    logo: "/avatar.webp",
-    email: details.email,
+    logo: "/avatar.webp"
 };
 
 export const navBarLinks: NavBarLink[] = [
@@ -49,10 +47,5 @@ export const socialLinks: SocialLink[] = [
         url: details.linkedIn,
         icon: "mdi:linkedin",
         external: true
-    },
-    {
-        title: "Mail",
-        url: `mailto:${details.email}`,
-        icon: "mdi:email",
-    },
+    }
 ];

@@ -28,7 +28,6 @@ export type BlogPageContent = {
 };
 
 export type Details = {
-  email: string;
   github: string;
   linkedIn: string;
   fullName: string;
@@ -47,7 +46,6 @@ export type HomePageContent = {
 };
 
 export type Identity = {
-  email: string;
   logo: string;
   name: string;
 };
