@@ -4,7 +4,7 @@ import type { AboutPageContent } from '../types/config';
 // About (/about)
 export const aboutPageContent: AboutPageContent = {
     about: {
-        description: `I'm a full-stack software engineer with a focus on building reliable, well-crafted web applications.<br/>I work primarily with React on the frontend and .NET Core on the backend, and I care a lot about the details — architecture decisions, code quality, and the user experience at the end of it all.
+        description: `I'm a full-stack software engineer with a focus on building reliable, well-crafted web applications.<br/>I work primarily with React on the frontend and .NET Core on the backend, and I care a lot about the details, architecture decisions, code quality, and the user experience at the end of it all.
 <br/>On this blog, I write about what I'm working on, engineering challenges worth sharing, and topics I find myself thinking about deeply.`,
         image_l: {
             alt: "Left Picture",
