@@ -1,10 +1,17 @@
 ---
-title: "Building a simple .NET Core application with Meta’s LLaMA: Unlocking Contextual AI Interactions"
+title: "Building a Local LLaMA Chat Client with .NET"
 pubDate: 2025-03-01 #Y-M-D
-description: "Learn how to leverage Meta’s LLaMA LLM for intelligent, context-aware AI interactions."
+description: "Using Microsoft.Extensions.AI and Ollama to keep a local LLM integration simple, replaceable, and familiar to .NET developers."
 author: "Ivan Kranjec"
+tags: [".NET", "LLM", "Ollama"]
 image: { url: "/blogs/llama-core/llama-core.webp", alt: "Three llama's at farm" }
 ---
+
+# Why this experiment matters
+
+The goal of this project was not to build a polished AI product. It was to understand how local language models can fit into a normal .NET application without making the rest of the code depend directly on one provider.
+
+That makes the abstraction boundary the interesting part. If the application talks to `IChatClient`, the model provider can be Ollama today, Azure OpenAI later, or something else entirely. The application logic should not need to care as much as the composition root does.
 
 # What is LLM?
 LLM - large language model could be explained as a "black box", designed to recognize user prompt and properly respond. LLMs are trained on masside datasets, often "scraped" from the internet. Performance of each language model depends on the quality of the data it has been trained on. Often, LLMs are specifically fine-tuned for specific tasks like answering domain specific questions, generating texts and translating languages...
@@ -86,3 +93,21 @@ public static class ApplicationHandler
 ```
 
 <img src="/blogs/llama-core/chat.webp" alt="Example of chat">
+
+# Tradeoffs
+
+Running the model locally is useful for experimentation because it keeps the feedback loop close. There is no remote service setup, no cloud account required, and the whole thing can run from a development machine.
+
+The tradeoff is that local models are operationally different from hosted APIs. You need to think about model download size, memory usage, startup time, and the quality of responses on the hardware you actually have. For a production system, those constraints matter as much as the code integration.
+
+# What I would change now
+
+The first version keeps the chat loop intentionally direct. If I revisited it, I would add a few boundaries:
+
+- a conversation service instead of keeping chat state inside the console handler
+- cancellation support for long-running streamed responses
+- configuration validation for the Ollama URI and model id
+- tests around prompt/history construction
+- a provider registration layer so local and remote chat clients can be swapped more cleanly
+
+The main lesson is that AI integration should still look like normal application architecture. The model is interesting, but the surrounding code needs the same boring qualities as any other dependency: clear contracts, configuration, error handling, and replaceability.

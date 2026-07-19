@@ -3,6 +3,7 @@ title: "Homelab Foundations: Starting My Self-Hosting Journey"
 pubDate: 2026-05-17 #Y-M-D
 description: "The first part of my self-hosting journey: hardware, Proxmox, networking, Cloudflare DNS, and the idea behind the setup."
 author: "Ivan Kranjec"
+tags: ["Homelab", "Proxmox", "Networking"]
 image: { url: "/blogs/homelab-foundations/cover.svg", alt: "Homelab foundations cover" }
 ---
 

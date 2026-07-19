@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
+import FadeInText from "@astroanimate/core/FadeInText";
 
 import Layout from "../../layouts/Layout.astro";
 import { blogPageContent } from "../../config";
+import { formatPostDate } from "../../utils/date";
 
 const posts = await getCollection("posts");
 posts.sort((a, b) => {
@@ -20,35 +22,53 @@ const postsWithReadingTime = await Promise.all(
 ---
 
 <Layout seo={blogPageContent.seo}>
-  <section class="mt-10 max-w-2xl mx-auto px-6">
-    <h1 class="font-bold text-3xl mb-1">Blog</h1>
-    <p class="opacity-60 mb-14">{blogPageContent.subtitle}</p>
+  <section class="page-shell page-section">
+    <FadeInText duration={0.7} yOffset={24}>
+      <span class="eyebrow">Writing</span>
+      <h1 class="page-title">Blog</h1>
+      <p class="lede mt-6">{blogPageContent.subtitle}</p>
+    </FadeInText>
 
-    <div class="grid grid-cols-1 gap-10 sm:gap-6 mb-10">
+    <div class="mt-12 grid grid-cols-1 gap-4 mb-10">
       {
-        postsWithReadingTime.map(({ post, readingTime }) => (
-          <a
-            href={`/blog/${post.id}`}
-            class=" sm:flex sm:flex-row-reverse sm:justify-between sm:gap-6 post"
-          >
-            <Image
-              src={post.data.image.url}
-              alt={post.data.image.url}
-              width={100}
-              height={100}
-              class={"rounded-lg w-[100px] h-[100px] object-cover"}
-            />
-            <div class="mt-4 sm:my-auto">
-              <p class="opacity-60 mb-2">
-                {post.data.pubDate.toLocaleDateString()} ·{" "}
-                {readingTime}
-              </p>
-              <h3 class="font-medium hover-underline">{post.data.title}</h3>
-              <p class="text-sm opacity-60 mt-2 mb-3">
-                {post.data.description}
-              </p>
-            </div>
-          </a>
+        postsWithReadingTime.map(({ post, readingTime }, index) => (
+          <FadeInText duration={0.55} delay={index * 0.07} enhance>
+            <a
+              href={`/blog/${post.id}`}
+              class="post interactive-surface grid gap-5 rounded-2xl p-4 sm:grid-cols-[1fr_144px] sm:items-center"
+            >
+              <div>
+                <p class="muted mb-2 text-sm">
+                  {formatPostDate(post.data.pubDate)} ·{" "}
+                  {readingTime}
+                </p>
+                <h2 class="text-xl font-semibold hover-underline">
+                  {post.data.title}
+                </h2>
+                <p class="muted mt-3 text-sm leading-6">
+                  {post.data.description}
+                </p>
+                {
+                  post.data.tags && (
+                    <div class="mt-4 flex flex-wrap gap-2">
+                      {post.data.tags.map((tag) => (
+                        <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-white/62">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )
+                }
+              </div>
+              <Image
+                src={post.data.image.url}
+                alt={post.data.image.alt}
+                width={180}
+                height={180}
+                class={"h-32 w-full rounded-xl object-cover sm:h-36"}
+              />
+            </a>
+          </FadeInText>
         ))
       }
     </div>

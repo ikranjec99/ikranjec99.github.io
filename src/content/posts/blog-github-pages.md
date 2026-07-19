@@ -3,6 +3,7 @@ title: "Building My Blog with Astro and GitHub Pages"
 pubDate: 2026-05-17 #Y-M-D
 description: "How this personal blog uses Astro for a fast static website, GitHub Pages for free hosting, and GitHub Actions for deployment."
 author: "Ivan Kranjec"
+tags: ["Astro", "Static sites", "CI/CD"]
 image: { url: "/blogs/blog-github-pages/cover.svg", alt: "Blog GitHub Pages deployment cover" }
 ---
 

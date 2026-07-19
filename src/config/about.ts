@@ -4,59 +4,55 @@ import type { AboutPageContent } from '../types/config';
 // About (/about)
 export const aboutPageContent: AboutPageContent = {
     about: {
-        description: `I'm a full-stack software engineer with a focus on building reliable, well-crafted web applications.<br/>I work primarily with React on the frontend and .NET Core on the backend, and I care a lot about the details, architecture decisions, code quality, and the user experience at the end of it all.
-<br/>On this blog, I write about what I'm working on, engineering challenges worth sharing, and topics I find myself thinking about deeply.`,
-        image_l: {
-            alt: "Left Picture",
-            url: "/demo-1.webp",
-        },
-        image_r: {
-            alt: "Right Picture",
-            url: "/demo-2.webp",
-        },
+        description: `I'm a software engineer working mostly with React and .NET.<br/>I like building clear, maintainable systems and understanding the product context behind the code.
+<br/>Here I write about projects, technical decisions, and lessons worth keeping around.`,
     },
     seo: {
         title: "About | Ivan Kranjec",
         description:
-            "Full time software engineer from Croatia who loves building cool things using code.",
+            "Software engineer from Croatia focused on .NET, React, infrastructure learning, and pragmatic engineering tradeoffs.",
         image: identity.logo,
     },
-    subtitle: "",
+    subtitle: "I build product software with clear technical choices and a practical understanding of the business behind them.",
     work: {
-        description: `I work across the full stack, choosing tools that fit the problem rather than just the trend.`,
+        description: `I work across the stack, connecting product needs with technical execution and keeping systems clear enough to evolve over time.`,
         items: [
             {
                 title: "Software Engineer",
+                summary: "Building .NET and React product features, background workflows, and internal tools while growing technical and business understanding in my area.",
                 company: {
                     name: "Infobip",
-                    image: "/avatar.webp",
+                    image: "/profile-picture.webp",
                     url: "https://github.com/ikranjec99",
                 },
                 date: "October 2023 - Present",
             },
             {
                 title: "Junior Software Engineer",
+                summary: "Worked on portal flows, customer experience improvements, and compliance-driven UI/backend changes in a production team.",
                 company: {
                     name: "Infobip",
-                    image: "/avatar.webp",
+                    image: "/profile-picture.webp",
                     url: "https://github.com/ikranjec99",
                 },
                 date: "September 2022 - October 2023",
             },
             {
                 title: "Junior Software Engineer",
+                summary: "Built and improved web applications for aviation and smart-city projects, including reports, dashboards, and notifications.",
                 company: {
                     name: "Combis",
-                    image: "/avatar.webp",
+                    image: "/profile-picture.webp",
                     url: "https://www.combis.hr/",
                 },
                 date: "October 2021 - September 2022",
             },
             {
                 title: "Junior Software Engineer Intern",
+                summary: "Learned practical .NET, frontend, and Docker workflows while helping with UI updates, report downloads, and backend integration.",
                 company: {
                     name: "Combis",
-                    image: "/avatar.webp",
+                    image: "/profile-picture.webp",
                     url: "https://www.combis.hr/",
                 },
                 date: "August 2020 - October 2021",
@@ -64,7 +60,7 @@ export const aboutPageContent: AboutPageContent = {
         ],
     },
     connect: {
-        description: `Let's connect:`,
+        description: `Find me where I share code, notes, and professional updates.`,
         links: socialLinks,
     },
 };

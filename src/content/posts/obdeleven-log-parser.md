@@ -3,6 +3,7 @@ title: "I Got a Check Engine Light. So I Wrote a OBDeleven Log Parser."
 pubDate: 2026-05-02 #Y-M-D
 description: "I got a check engine light. So I decided to create a powerful log parser for OBDeleven, designed to extract and analyze data from automotive logs with ease."
 author: "Ivan Kranjec"
+tags: [".NET", "Parsing", "CLI"]
 image: { url: "/blogs/obdeleven-log-parser/log.webp", alt: "Log file from OBDeleven" }
 ---
 # I Got a Check Engine Light. So I Wrote a Parser.
