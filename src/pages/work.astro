@@ -1,0 +1,148 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+import FadeInText from "@astroanimate/core/FadeInText";
+
+import Layout from "../layouts/Layout.astro";
+import { identity, projectsPageContent } from "../config";
+
+const posts = await getCollection("posts");
+posts.sort((a, b) => {
+  const dateA = new Date(a.data.pubDate).getTime();
+  const dateB = new Date(b.data.pubDate).getTime();
+  return dateB - dateA;
+});
+
+const postsWithReadingTime = await Promise.all(
+  posts.map(async (post) => {
+    const { remarkPluginFrontmatter } = await render(post);
+    return { post, readingTime: remarkPluginFrontmatter.minutesRead };
+  }),
+);
+
+const postsById = new Map(
+  postsWithReadingTime.map((item) => [item.post.id, item]),
+);
+
+const projectsByTitle = new Map(
+  projectsPageContent.projects.map((project) => [project.title, project]),
+);
+
+const obdelevenProject = projectsByTitle.get("OBDeleven Log Parser");
+const qrProject = projectsByTitle.get("QR Code Generator API");
+const llamaProject = projectsByTitle.get("LLaMA .NET Chat Client");
+const obdelevenNote = postsById.get("obdeleven-log-parser");
+const qrNote = postsById.get("qr-code-generator");
+const llamaNote = postsById.get("llama-core");
+
+const featuredCaseStudies = [
+  obdelevenProject && obdelevenNote
+    ? {
+        project: obdelevenProject,
+        note: obdelevenNote,
+        focus: "Developer tooling · parsing · data modeling",
+        signal:
+          "Turns a real-world diagnostic export into structured data that can be compared, searched, and extended.",
+      }
+    : undefined,
+  qrProject && qrNote
+    ? {
+        project: qrProject,
+        note: qrNote,
+        focus: "API design · configuration · practical automation",
+        signal:
+          "Wraps a small recurring workflow in a predictable API while calling out the production gaps honestly.",
+      }
+    : undefined,
+  llamaProject && llamaNote
+    ? {
+        project: llamaProject,
+        note: llamaNote,
+        focus: ".NET abstractions · local tooling · replaceable dependencies",
+        signal:
+          "Explores local model integration through normal application architecture instead of provider lock-in.",
+      }
+    : undefined,
+].filter((item) => item !== undefined);
+
+---
+
+<Layout
+  seo={{
+    title: "Work | Ivan Kranjec",
+    description:
+      "Selected projects, public notes, and practical technical writing from Ivan Kranjec.",
+    image: identity.logo,
+  }}
+>
+  <section class="page-shell page-section">
+    <FadeInText duration={0.7} yOffset={24}>
+      <span class="eyebrow">Selected Work</span>
+      <h1 class="page-title">Work</h1>
+      <p class="lede mt-6">
+        A curated view of selected projects, technical notes, and the engineering
+        decisions behind them. Less archive, more signal: what was built, why
+        it matters, and what I learned from it.
+      </p>
+    </FadeInText>
+  </section>
+
+  <section id="selected-projects" class="page-shell mt-20 scroll-mt-24">
+    <FadeInText duration={0.6} enhance>
+      <div class="mb-8">
+        <h2 class="section-title">Selected Projects</h2>
+        <p class="muted mt-3 max-w-2xl text-sm leading-6">
+          Each item pairs a project with the note behind it, so the result and
+          the engineering reasoning sit together.
+        </p>
+      </div>
+    </FadeInText>
+
+    <div class="grid gap-3">
+      {
+        featuredCaseStudies.map(({ project, note, focus, signal }, index) => (
+          <FadeInText duration={0.55} delay={index * 0.08} enhance>
+            <article class="interactive-surface relative grid cursor-pointer gap-4 rounded-2xl p-4 sm:grid-cols-[120px_1fr] sm:items-center">
+              <a
+                href={project.url}
+                target="_blank"
+                class="absolute inset-0 z-0 rounded-2xl"
+                aria-label={`Open ${project.title} source`}
+              />
+              <Image
+                src={project.image}
+                alt={project.title}
+                width={240}
+                height={160}
+                class="relative h-28 w-full rounded-xl object-cover sm:h-24"
+              />
+              <div class="relative">
+                <p class="muted mb-1 text-xs">{focus}</p>
+                <h3 class="text-xl font-semibold">{project.title}</h3>
+                <p class="muted mt-2 text-sm leading-6">{signal}</p>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {project.stack.map((item) => (
+                    <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-white/62">
+                      {item}
+                    </span>
+                  ))}
+                </div>
+
+                <div class="group mt-4 flex flex-wrap gap-x-5 gap-y-3">
+                  <a
+                    href={`/blog/${note.post.id}`}
+                    class="relative z-10 text-sm font-medium text-white/62 underline underline-offset-4 transition-colors hover:text-white"
+                  >
+                    Read blog · {note.readingTime}
+                  </a>
+                </div>
+              </div>
+            </article>
+          </FadeInText>
+        ))
+      }
+    </div>
+  </section>
+
+</Layout>

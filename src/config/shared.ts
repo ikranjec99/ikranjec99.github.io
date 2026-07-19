@@ -13,7 +13,7 @@ const details: Details = {
 
 export const identity: Identity = {
     name: details.fullName,
-    logo: "/avatar.webp"
+    logo: "/profile-picture.webp"
 };
 
 export const navBarLinks: NavBarLink[] = [
@@ -22,16 +22,16 @@ export const navBarLinks: NavBarLink[] = [
         url: "/",
     },
     {
+        title: "Work",
+        url: "/work",
+    },
+    {
+        title: "Writing",
+        url: "/blog",
+    },
+    {
         title: "About",
         url: "/about",
-    },
-    {
-        title: "Projects",
-        url: "/projects",
-    },
-    {
-        title: "Blog",
-        url: "/blog",
     },
 ];
 

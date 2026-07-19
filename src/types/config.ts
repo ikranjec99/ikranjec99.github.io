@@ -1,14 +1,6 @@
 export type AboutPageContent = {
   about: {
     description: string;
-    image_l: {
-      url: string;
-      alt: string;
-    };
-    image_r: {
-      url: string;
-      alt: string;
-    };
   };
   connect: {
     description: string;
@@ -34,7 +26,15 @@ export type Details = {
 };
 
 export type HomePageContent = {
+  currently: {
+    description: string;
+    title: string;
+  }[];
   description: string;
+  focusAreas: {
+    description: string;
+    title: string;
+  }[];
   links: {
     title: string;
     url: string;
@@ -57,8 +57,12 @@ export type NavBarLink = {
 };
 
 export type Project = {
+  approach: string;
   description: string;
+  impact: string;
   image: string;
+  problem: string;
+  stack: string[];
   title: string;
   url: string;
   year: string;
@@ -77,6 +81,7 @@ export type ResumeItem = {
     url: string;
   };
   date: string;
+  summary?: string;
   title: string;
 };
 

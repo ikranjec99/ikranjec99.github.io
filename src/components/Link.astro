@@ -13,7 +13,7 @@ const { external, href, noAnchor, text } = Astro.props;
 
 {
   noAnchor && (
-    <div class="flex items-center gap-2 opacity-60 group-hover:opacity-30 hover:!opacity-60 transition-opacity">
+    <div class="inline-flex items-center gap-2 text-sm font-medium text-white/62 transition-colors group-hover:text-white/35 hover:!text-white">
       <div class="rotate-45">
         <Icon name="mdi:arrow-up" />
       </div>
@@ -26,7 +26,7 @@ const { external, href, noAnchor, text } = Astro.props;
     <a
       href={href}
       target={external ? "_blank" : "_self"}
-      class="flex items-center gap-2 opacity-60 group-hover:opacity-30 hover:!opacity-60 transition-opacity"
+      class="inline-flex items-center gap-2 text-sm font-medium text-white/62 transition-colors group-hover:text-white/35 hover:!text-white"
     >
       <div class="rotate-45">
         <Icon name="mdi:arrow-up" />
