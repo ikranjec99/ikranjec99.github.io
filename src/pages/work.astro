@@ -102,21 +102,19 @@ const featuredCaseStudies = [
       {
         featuredCaseStudies.map(({ project, note, focus, signal }, index) => (
           <FadeInText duration={0.55} delay={index * 0.08} enhance>
-            <article class="interactive-surface relative grid cursor-pointer gap-4 rounded-2xl p-4 sm:grid-cols-[120px_1fr] sm:items-center">
-              <a
-                href={project.url}
-                target="_blank"
-                class="absolute inset-0 z-0 rounded-2xl"
-                aria-label={`Open ${project.title} source`}
-              />
+            <a
+              href={`/blog/${note.post.id}`}
+              class="interactive-surface grid cursor-pointer gap-4 rounded-2xl p-4 sm:grid-cols-[120px_1fr] sm:items-center"
+              aria-label={`Read about ${project.title}`}
+            >
               <Image
                 src={project.image}
                 alt={project.title}
                 width={240}
                 height={160}
-                class="relative h-28 w-full rounded-xl object-cover sm:h-24"
+                class="h-28 w-full rounded-xl object-cover sm:h-24"
               />
-              <div class="relative">
+              <div>
                 <p class="muted mb-1 text-xs">{focus}</p>
                 <h3 class="text-xl font-semibold">{project.title}</h3>
                 <p class="muted mt-2 text-sm leading-6">{signal}</p>
@@ -130,15 +128,12 @@ const featuredCaseStudies = [
                 </div>
 
                 <div class="group mt-4 flex flex-wrap gap-x-5 gap-y-3">
-                  <a
-                    href={`/blog/${note.post.id}`}
-                    class="relative z-10 text-sm font-medium text-white/62 underline underline-offset-4 transition-colors hover:text-white"
-                  >
+                  <span class="text-sm font-medium text-white/62 underline underline-offset-4 transition-colors group-hover:text-white">
                     Read blog · {note.readingTime}
-                  </a>
+                  </span>
                 </div>
               </div>
-            </article>
+            </a>
           </FadeInText>
         ))
       }
