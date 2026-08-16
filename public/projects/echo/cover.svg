@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Echo browser request interceptor</title>
+  <desc id="desc">A browser request flowing through an Echo rule and changing direction</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#111b27"/>
+      <stop offset="1" stop-color="#17202a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="800" rx="48" fill="url(#bg)"/>
+  <circle cx="840" cy="220" r="180" fill="#3498db" opacity=".12" filter="url(#glow)"/>
+  <circle cx="345" cy="600" r="150" fill="#2ecc71" opacity=".1" filter="url(#glow)"/>
+  <rect x="115" y="120" width="970" height="560" rx="30" fill="#101820" stroke="#344553" stroke-width="3"/>
+  <path d="M115 205h970" stroke="#344553" stroke-width="3"/>
+  <circle cx="165" cy="163" r="10" fill="#c0392b"/><circle cx="200" cy="163" r="10" fill="#d9a441"/><circle cx="235" cy="163" r="10" fill="#2ecc71"/>
+  <rect x="285" y="143" width="650" height="40" rx="20" fill="#172530"/>
+  <text x="600" y="169" fill="#8fa2b2" font-family="ui-monospace, monospace" font-size="18" text-anchor="middle">||api.example.com^</text>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M230 400h220" stroke="#3498db" stroke-width="18"/>
+    <path d="m410 360 42 40-42 40" stroke="#3498db" stroke-width="18"/>
+    <rect x="475" y="295" width="250" height="210" rx="36" stroke="#dce4e8" stroke-width="6"/>
+    <path d="M540 365c36-38 84-38 120 0M540 435c36 38 84 38 120 0" stroke="#3498db" stroke-width="15"/>
+    <circle cx="600" cy="400" r="16" fill="#2ecc71" stroke="none"/>
+    <path d="M750 400h220" stroke="#2ecc71" stroke-width="18"/>
+    <path d="m930 360 42 40-42 40" stroke="#2ecc71" stroke-width="18"/>
+  </g>
+  <text x="230" y="475" fill="#8fa2b2" font-family="Inter, system-ui, sans-serif" font-size="24" text-anchor="middle">REQUEST</text>
+  <text x="600" y="565" fill="#ffffff" font-family="Inter, system-ui, sans-serif" font-size="54" font-weight="700" text-anchor="middle">Echo</text>
+  <text x="600" y="605" fill="#8fa2b2" font-family="Inter, system-ui, sans-serif" font-size="23" text-anchor="middle">Intercept locally. Debug confidently.</text>
+</svg>
