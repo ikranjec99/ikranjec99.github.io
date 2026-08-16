@@ -28,14 +28,25 @@ const projectsByTitle = new Map(
   projectsPageContent.projects.map((project) => [project.title, project]),
 );
 
+const echoProject = projectsByTitle.get("Echo");
 const obdelevenProject = projectsByTitle.get("OBDeleven Log Parser");
 const qrProject = projectsByTitle.get("QR Code Generator API");
 const llamaProject = projectsByTitle.get("LLaMA .NET Chat Client");
+const echoNote = postsById.get("echo-browser-request-interceptor");
 const obdelevenNote = postsById.get("obdeleven-log-parser");
 const qrNote = postsById.get("qr-code-generator");
 const llamaNote = postsById.get("llama-core");
 
 const featuredCaseStudies = [
+  echoProject && echoNote
+    ? {
+        project: echoProject,
+        note: echoNote,
+        focus: "Browser tooling · local-first architecture · Manifest V3",
+        signal:
+          "Turns browser request interception into a private, testable rule system that runs entirely on the developer’s device.",
+      }
+    : undefined,
   obdelevenProject && obdelevenNote
     ? {
         project: obdelevenProject,

@@ -11,6 +11,17 @@ export const projectsPageContent: ProjectPageContent = {
     subtitle: "Selected projects framed as engineering decisions: what problem they solve, how they were approached, and what they make possible.",
     projects: [
         {
+            title: "Echo",
+            description: "A local-first browser extension for intercepting, transforming, and experimenting with HTTP requests.",
+            problem: "Developers often need to alter browser traffic while debugging, but many tools add a proxy, a remote service, or a workflow outside the browser.",
+            approach: "Compile typed rules into Manifest V3 APIs, keep state in local browser storage, and isolate browser-specific behavior behind tested adapters.",
+            impact: "Provides block, redirect, query, header, CSS, JavaScript, and delay rules without accounts, analytics, or a backend.",
+            stack: ["TypeScript", "React", "WXT", "Manifest V3"],
+            image: "/projects/echo/cover.svg",
+            year: "2026",
+            url: "https://github.com/ikranjec99/echo"
+        },
+        {
             title: "OBDeleven Log Parser",
             description: "A CLI parser for turning exported automotive diagnostic logs into structured, reusable data.",
             problem: "OBDeleven exports useful diagnostic data as text, but the file is structured for humans rather than repeatable analysis.",
