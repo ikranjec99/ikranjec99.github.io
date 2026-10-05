@@ -68,13 +68,19 @@ const featuredCaseStudies = pairings.flatMap(([projectTitle, postId, focus]) => 
                   </a>
                 </div>
               </div>
-              <Image
-                src={project.image}
-                alt=""
-                width={520}
-                height={360}
-                class="aspect-[4/3] w-full border border-[#cdccc3] object-cover sm:col-start-2 lg:col-start-3 lg:row-start-1"
-              />
+              <a
+                href={`/blog/${note.post.id}`}
+                class="group block sm:col-start-2 lg:col-start-3 lg:row-start-1"
+                aria-label={`Read the ${project.title} article`}
+              >
+                <Image
+                  src={project.image}
+                  alt=""
+                  width={520}
+                  height={360}
+                  class="aspect-[4/3] w-full border border-[#cdccc3] object-cover transition-opacity group-hover:opacity-80"
+                />
+              </a>
             </article>
           </li>
         ))
