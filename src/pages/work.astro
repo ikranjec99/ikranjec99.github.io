@@ -14,21 +14,9 @@ const postsWithReadingTime = await Promise.all(
 );
 
 const postsById = new Map(postsWithReadingTime.map((item) => [item.post.id, item]));
-const projectsByTitle = new Map(
-  projectsPageContent.projects.map((project) => [project.title, project]),
-);
-
-const pairings = [
-  ["Echo", "echo-browser-request-interceptor", "Browser tooling · local-first architecture · Manifest V3"],
-  ["OBDeleven Log Parser", "obdeleven-log-parser", "Developer tooling · parsing · data modeling"],
-  ["QR Code Generator API", "qr-code-generator", "API design · configuration · practical automation"],
-  ["LLaMA .NET Chat Client", "llama-core", ".NET abstractions · local tooling · replaceable dependencies"],
-] as const;
-
-const featuredCaseStudies = pairings.flatMap(([projectTitle, postId, focus]) => {
-  const project = projectsByTitle.get(projectTitle);
-  const note = postsById.get(postId);
-  return project && note ? [{ project, note, focus }] : [];
+const featuredCaseStudies = projectsPageContent.projects.flatMap((project) => {
+  const note = postsById.get(project.articleId);
+  return note ? [{ project, note }] : [];
 });
 ---
 
@@ -44,12 +32,12 @@ const featuredCaseStudies = pairings.flatMap(([projectTitle, postId, focus]) => 
   <section id="selected-projects" class="page-shell mt-24 scroll-mt-24">
     <ol class="border-b border-[#cdccc3]">
       {
-        featuredCaseStudies.map(({ project, note, focus }, index) => (
+        featuredCaseStudies.map(({ project, note }, index) => (
           <li class="index-row py-8 sm:py-10">
             <article class="grid gap-6 sm:grid-cols-[3rem_1fr] lg:grid-cols-[3rem_1fr_260px] lg:gap-8">
               <p class="meta pt-1">{String(index + 1).padStart(2, "0")}</p>
               <div>
-                <p class="meta">{project.year} · {focus}</p>
+                <p class="meta">{project.year} · {project.focus}</p>
                 <h2 class="mt-3 text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
                   <a class="transition-colors hover:text-[#d94f32]" href={`/blog/${note.post.id}`}>
                     {project.title}

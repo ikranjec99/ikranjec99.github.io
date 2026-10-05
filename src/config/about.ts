@@ -21,7 +21,7 @@ export const aboutPageContent: AboutPageContent = {
                 summary: "Building .NET and React product features, background workflows, and internal tools while growing technical and business understanding in my area.",
                 company: {
                     name: "Infobip",
-                    url: "https://github.com/ikranjec99",
+                    url: "https://www.infobip.com/",
                 },
                 date: "October 2023 - Present",
             },
@@ -30,7 +30,7 @@ export const aboutPageContent: AboutPageContent = {
                 summary: "Worked on portal flows, customer experience improvements, and compliance-driven UI/backend changes in a production team.",
                 company: {
                     name: "Infobip",
-                    url: "https://github.com/ikranjec99",
+                    url: "https://www.infobip.com/",
                 },
                 date: "September 2022 - October 2023",
             },

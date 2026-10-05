@@ -47,7 +47,9 @@ export type NavBarLink = {
 };
 
 export type Project = {
+  articleId: string;
   description: string;
+  focus: string;
   image: string;
   stack: string[];
   title: string;

@@ -60,6 +60,24 @@
 }
 
 @layer components {
+  .skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 100;
+    transform: translateY(-200%);
+    border: 1px solid var(--ink);
+    background: var(--paper-raised);
+    padding: 0.65rem 0.9rem;
+    color: var(--ink);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
   .page-shell {
     width: min(100%, 1080px);
     margin-inline: auto;
