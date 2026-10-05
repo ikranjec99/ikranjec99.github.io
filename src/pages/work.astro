@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
-import { identity, projectsPageContent } from "../config";
+import { projectsPageContent } from "../config";
 
 const posts = await getCollection("posts");
 const postsWithReadingTime = await Promise.all(
@@ -32,13 +32,7 @@ const featuredCaseStudies = pairings.flatMap(([projectTitle, postId, focus]) => 
 });
 ---
 
-<Layout
-  seo={{
-    title: "Work | Ivan Kranjec",
-    description: "Selected projects and the engineering decisions behind them.",
-    image: identity.logo,
-  }}
->
+<Layout seo={projectsPageContent.seo}>
   <section class="page-shell page-intro">
     <p class="kicker">Selected work</p>
     <h1 class="page-title mt-5">Things I’ve built and learned from.</h1>

@@ -15,14 +15,12 @@ export const aboutPageContent: AboutPageContent = {
     },
     subtitle: "I build product software with clear technical choices and a practical understanding of the business behind them.",
     work: {
-        description: `I work across the stack, connecting product needs with technical execution and keeping systems clear enough to evolve over time.`,
         items: [
             {
                 title: "Software Engineer",
                 summary: "Building .NET and React product features, background workflows, and internal tools while growing technical and business understanding in my area.",
                 company: {
                     name: "Infobip",
-                    image: "/profile-picture.webp",
                     url: "https://github.com/ikranjec99",
                 },
                 date: "October 2023 - Present",
@@ -32,7 +30,6 @@ export const aboutPageContent: AboutPageContent = {
                 summary: "Worked on portal flows, customer experience improvements, and compliance-driven UI/backend changes in a production team.",
                 company: {
                     name: "Infobip",
-                    image: "/profile-picture.webp",
                     url: "https://github.com/ikranjec99",
                 },
                 date: "September 2022 - October 2023",
@@ -42,7 +39,6 @@ export const aboutPageContent: AboutPageContent = {
                 summary: "Built and improved web applications for aviation and smart-city projects, including reports, dashboards, and notifications.",
                 company: {
                     name: "Combis",
-                    image: "/profile-picture.webp",
                     url: "https://www.combis.hr/",
                 },
                 date: "October 2021 - September 2022",
@@ -52,7 +48,6 @@ export const aboutPageContent: AboutPageContent = {
                 summary: "Learned practical .NET, frontend, and Docker workflows while helping with UI updates, report downloads, and backend integration.",
                 company: {
                     name: "Combis",
-                    image: "/profile-picture.webp",
                     url: "https://www.combis.hr/",
                 },
                 date: "August 2020 - October 2021",
