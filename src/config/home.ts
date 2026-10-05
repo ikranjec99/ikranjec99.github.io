@@ -9,9 +9,9 @@ export const homePageContent: HomePageContent = {
             "Software engineer writing about .NET, React, infrastructure, developer tooling, and practical engineering tradeoffs.",
         image: identity.logo,
     },
-    role: "Software Engineer · Product-minded engineering with .NET and React",
+    role: "I build thoughtful product software with .NET and React.",
     description:
-        "I build software by connecting product context, business constraints, and engineering tradeoffs. This site is where I document projects, technical notes, and decisions worth remembering.",
+        "Mostly full-stack work, small developer tools, and notes about the decisions behind them. I care about clear interfaces, maintainable systems, and shipping useful things.",
     focusAreas: [
         {
             title: "Product thinking",
@@ -47,8 +47,8 @@ export const homePageContent: HomePageContent = {
             url: "/work",
         },
         {
-            title: "About Me",
-            url: "/about",
+            title: "Read the Blog",
+            url: "/blog",
         },
     ],
 };

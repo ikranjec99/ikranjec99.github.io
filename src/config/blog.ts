@@ -8,5 +8,5 @@ export const blogPageContent: BlogPageContent = {
         description: "Writing on software engineering and technical decision-making.",
         image: identity.logo,
     },
-    subtitle: "Notes on building software with practical tradeoffs: .NET, infrastructure, tooling, static sites, and experiments that sharpen engineering judgment.",
+    subtitle: "Technical notes, project write-ups, and the occasional lesson I want to remember.",
 };

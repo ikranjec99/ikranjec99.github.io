@@ -1,16 +1,12 @@
 ---
 import { Image } from "astro:assets";
 import { getCollection, render } from "astro:content";
-import FadeInText from "@astroanimate/core/FadeInText";
-import ScaleIn from "@astroanimate/core/ScaleIn";
 
-import { identity } from "../../config";
 import Layout from "../../layouts/Layout.astro";
 import { formatPostDate } from "../../utils/date";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
-
   return posts.map((post) => ({
     params: { slug: post.id },
     props: { entry: post },
@@ -28,64 +24,39 @@ const { Content, remarkPluginFrontmatter } = await render(entry);
     image: entry.data.image.url,
   }}
 >
-  <section class="page-shell page-section">
-    <FadeInText duration={0.7} yOffset={24}>
-      <a
-        href="/blog"
-        class="mb-8 inline-flex text-sm font-medium text-white/55 transition-colors hover:text-white"
-        >Back to Blog</a
-      >
-      <span class="eyebrow">Post</span>
-      <h1 class="max-w-3xl text-balance text-4xl font-black leading-[0.98] sm:text-6xl">
+  <article>
+    <header class="article-shell page-intro">
+      <a href="/blog" class="text-link">← All writing</a>
+      <p class="kicker mt-12">{formatPostDate(entry.data.pubDate)} · {remarkPluginFrontmatter.minutesRead}</p>
+      <h1 class="mt-5 text-balance text-4xl font-semibold leading-[1.02] tracking-[-0.05em] sm:text-6xl">
         {entry.data.title}
       </h1>
-      <p class="lede mt-6">
-        {entry.data.description}
-      </p>
-      <div class="mt-8 grid gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-4 sm:grid-cols-[1fr_auto] sm:items-center">
-        <div class="flex gap-4">
-        <Image
-          src={identity.logo}
-          alt={identity.name}
-          width={44}
-          height={44}
-          class="h-11 w-11 rounded-full object-cover ring-1 ring-white/15"
-        />
-        <div>
-          <p class="font-medium">{identity.name}</p>
-          <p class="muted text-sm">
-            {formatPostDate(entry.data.pubDate)} · {
-              remarkPluginFrontmatter.minutesRead
-            }
-          </p>
-        </div>
-        </div>
-        {
-          entry.data.tags && (
-            <div class="flex flex-wrap gap-2 sm:justify-end">
-              {entry.data.tags.map((tag) => (
-                <span class="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-xs text-white/62">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          )
-        }
-      </div>
-    </FadeInText>
-    <ScaleIn class="mt-10 overflow-hidden rounded-2xl border border-white/10" duration={560} delay={120}>
+      <p class="lede mt-7">{entry.data.description}</p>
+      {
+        entry.data.tags && (
+          <p class="meta mt-7">{entry.data.tags.join(" · ")}</p>
+        )
+      }
+    </header>
+
+    <div class="page-shell mt-12">
       <Image
         src={entry.data.image.url}
         alt={entry.data.image.alt}
         width={1200}
         height={630}
-        class="aspect-video w-full object-cover"
+        class="aspect-video w-full border border-[#cdccc3] object-cover"
       />
-    </ScaleIn>
-    <article
-      class="prose prose-invert prose-lg mt-12 max-w-none prose-a:text-sky-300 prose-a:underline-offset-4 prose-blockquote:border-sky-300/60 prose-blockquote:text-white/80 prose-code:text-yellow-200 prose-headings:scroll-mt-24 prose-headings:text-white prose-img:rounded-2xl prose-p:text-white/72 prose-li:text-white/72 prose-strong:text-white"
-    >
-      <Content />
-    </article>
-  </section>
+    </div>
+
+    <div class="article-shell">
+      <div class="article-content prose prose-lg mt-14 max-w-none prose-headings:font-semibold prose-strong:text-[#191a17]">
+        <Content />
+      </div>
+
+      <div class="mt-20 border-t border-[#cdccc3] pt-6">
+        <a href="/blog" class="text-link">← Back to writing</a>
+      </div>
+    </div>
+  </article>
 </Layout>

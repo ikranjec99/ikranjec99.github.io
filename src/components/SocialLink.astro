@@ -3,17 +3,16 @@ import { Icon } from "astro-icon/components";
 import type { SocialLink } from "../types/config";
 
 type Props = SocialLink;
-
 const { title, url, icon, external } = Astro.props;
-
-const target = external ? "_blank" : "_self";
 ---
 
 <a
   href={url}
-  class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-2 text-sm text-white/65 transition-all group-hover:opacity-50 hover:!opacity-100 hover:border-sky-300/35 hover:bg-white/[0.08]"
-  target={target}
+  class="text-link"
+  target={external ? "_blank" : "_self"}
+  rel={external ? "noreferrer" : undefined}
 >
-  <Icon name={icon} width={18} height={18} />
+  <Icon name={icon} width={16} height={16} />
   <span>{title}</span>
+  <span aria-hidden="true">{external ? "↗" : "→"}</span>
 </a>
