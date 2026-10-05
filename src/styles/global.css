@@ -187,8 +187,38 @@
   }
 
   .article-content :where(pre) {
-    border: 1px solid #2c2d29;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    border: 1px solid #383a34;
     border-radius: 0;
+    background-color: #1f211d !important;
+    padding: 1.125rem 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    scrollbar-color: #5f6259 #1f211d;
+    scrollbar-width: thin;
+    tab-size: 2;
+  }
+
+  .article-content :where(pre code) {
+    display: block;
+    width: max-content;
+    min-width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+  }
+
+  .article-content :where(pre)::-webkit-scrollbar {
+    height: 0.55rem;
+  }
+
+  .article-content :where(pre)::-webkit-scrollbar-track {
+    background: #1f211d;
+  }
+
+  .article-content :where(pre)::-webkit-scrollbar-thumb {
+    border: 2px solid #1f211d;
+    background: #5f6259;
   }
 
   .article-content :where(img) {
