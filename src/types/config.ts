@@ -9,7 +9,6 @@ export type AboutPageContent = {
   seo: SEOInfo;
   subtitle: string;
   work: {
-    description: string;
     items: ResumeItem[];
   };
 };
@@ -26,15 +25,7 @@ export type Details = {
 };
 
 export type HomePageContent = {
-  currently: {
-    description: string;
-    title: string;
-  }[];
   description: string;
-  focusAreas: {
-    description: string;
-    title: string;
-  }[];
   links: {
     title: string;
     url: string;
@@ -42,7 +33,6 @@ export type HomePageContent = {
   }[];
   role: string;
   seo: SEOInfo;
-  socialLinks: SocialLink[];
 };
 
 export type Identity = {
@@ -57,11 +47,10 @@ export type NavBarLink = {
 };
 
 export type Project = {
-  approach: string;
+  articleId: string;
   description: string;
-  impact: string;
+  focus: string;
   image: string;
-  problem: string;
   stack: string[];
   title: string;
   url: string;
@@ -71,12 +60,10 @@ export type Project = {
 export type ProjectPageContent = {
   projects: Project[];
   seo: SEOInfo;
-  subtitle: string;
 };
 
 export type ResumeItem = {
   company: {
-    image: string;
     name: string;
     url: string;
   };

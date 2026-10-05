@@ -2,116 +2,68 @@
 import ResumeItem from "../components/ResumeItem.astro";
 import SocialLinkBox from "../components/SocialLinkBox.astro";
 import Layout from "../layouts/Layout.astro";
-import FadeInText from "@astroanimate/core/FadeInText";
-import ScaleIn from "@astroanimate/core/ScaleIn";
-
 import { aboutPageContent } from "../config/about";
-
-const influences = [
-  {
-    name: "Albert Einstein",
-    field: "Physics",
-    quote: "Everything must be made as simple as possible. But not simpler.",
-    note: "Good engineering removes unnecessary complexity without losing the truth of the problem.",
-  },
-  {
-    name: "Leonardo da Vinci",
-    field: "Art and Engineering",
-    quote: "Simplicity is the ultimate sophistication.",
-    note: "The best work often comes from understanding enough to remove what does not matter.",
-  },
-];
 ---
 
 <Layout seo={aboutPageContent.seo}>
-  <section class="page-shell page-section">
-    <FadeInText duration={0.7} yOffset={24}>
-      <span class="eyebrow">About</span>
-      <h1 class="page-title">About</h1>
-      <p class="lede mt-6">{aboutPageContent.subtitle}</p>
-    </FadeInText>
-    <ScaleIn
-      class="surface mt-10 flex flex-col gap-5 rounded-2xl p-5 sm:flex-row sm:items-center sm:p-6"
-      duration={520}
-      delay={120}
-    >
+  <section class="page-shell page-intro">
+    <p class="kicker">About</p>
+    <div class="mt-5 grid gap-10 md:grid-cols-[1fr_180px] md:items-start">
+      <div>
+        <h1 class="page-title">A practical engineer with a product mindset.</h1>
+        <p class="lede mt-7">{aboutPageContent.subtitle}</p>
+        <div class="mt-8 max-w-2xl text-base leading-8 text-[#42433d]">
+          <Fragment set:html={aboutPageContent.about.description} />
+        </div>
+      </div>
       <img
         src="/profile-picture.webp"
         alt="Ivan Kranjec"
-        width="88"
-        height="88"
+        width="360"
+        height="360"
         loading="eager"
-        class="h-20 w-20 shrink-0 rounded-2xl border border-white/10 bg-white/[0.03] object-cover sm:h-[88px] sm:w-[88px]"
+        class="aspect-square w-36 border border-[#cdccc3] object-cover grayscale md:w-full"
       />
-      <div class="soft leading-8">
-        <Fragment set:html={aboutPageContent.about.description} />
-      </div>
-    </ScaleIn>
-    <div class="mt-10 grid gap-4 sm:grid-cols-2">
+    </div>
+  </section>
+
+  <section class="page-shell mt-28 grid gap-8 md:grid-cols-[180px_1fr]">
+    <div>
+      <h2 class="section-label">Experience</h2>
+      <p class="mt-4 max-w-[16rem] text-sm leading-6 text-[#65665f]">
+        Product work across the stack, from customer-facing flows to background systems and internal tooling.
+      </p>
+    </div>
+    <div class="border-b border-[#cdccc3]">
       {
-        influences.map((item, index) => (
-          <ScaleIn duration={520} delay={index * 90} enhance>
-            <figure class="surface flex h-full flex-col justify-between rounded-2xl p-5">
-              <blockquote class="text-lg font-semibold leading-7 text-white">
-                "{item.quote}"
-              </blockquote>
-              <figcaption class="mt-8">
-                <p class="font-medium">{item.name}</p>
-                <p class="muted mt-1 text-sm">{item.field}</p>
-                <p class="muted mt-4 text-sm leading-6">{item.note}</p>
-              </figcaption>
-            </figure>
-          </ScaleIn>
+        aboutPageContent.work.items.map((item) => (
+          <ResumeItem
+            company={item.company}
+            date={item.date}
+            summary={item.summary}
+            title={item.title}
+          />
         ))
       }
     </div>
   </section>
-  <section class="page-shell mt-28 grid gap-8 sm:grid-cols-[130px_1fr]">
-    <FadeInText duration={0.55} enhance>
-      <h2 class="section-title">Work</h2>
-    </FadeInText>
+
+  <section class="page-shell mt-28 grid gap-8 md:grid-cols-[180px_1fr]">
     <div>
-      <FadeInText class="soft mb-6 leading-8" duration={0.55} enhance>
-        <Fragment set:html={aboutPageContent.work.description} />
-      </FadeInText>
-      <div class="grid grid-cols-1 gap-3 group">
-        {
-          aboutPageContent.work.items.map((item, index) => (
-            <FadeInText duration={0.5} delay={index * 0.07} enhance>
-              <ResumeItem
-                company={item.company}
-                date={item.date}
-                summary={item.summary}
-                title={item.title}
-              />
-            </FadeInText>
-          ))
-        }
-      </div>
+      <h2 class="section-label">Elsewhere</h2>
+      <p class="mt-4 text-sm leading-6 text-[#65665f]">{aboutPageContent.connect.description}</p>
     </div>
-  </section>
-  <section class="page-shell mt-28 grid gap-8 sm:grid-cols-[130px_1fr]">
-    <FadeInText duration={0.55} enhance>
-      <h2 class="section-title">Connect</h2>
-    </FadeInText>
-    <div>
-      <FadeInText class="soft mb-6 leading-8" duration={0.55} enhance>
-        <Fragment set:html={aboutPageContent.connect.description} />
-      </FadeInText>
-      <div class="grid grid-cols-1 gap-3 group min-[460px]:grid-cols-2">
-        {
-          aboutPageContent.connect.links.map((item, index) => (
-            <FadeInText duration={0.5} delay={index * 0.07} enhance>
-              <SocialLinkBox
-                title={item.title}
-                url={item.url}
-                icon={item.icon}
-                external={item.external}
-              />
-            </FadeInText>
-          ))
-        }
-      </div>
+    <div class="border-b border-[#cdccc3]">
+      {
+        aboutPageContent.connect.links.map((item) => (
+          <SocialLinkBox
+            title={item.title}
+            url={item.url}
+            icon={item.icon}
+            external={item.external}
+          />
+        ))
+      }
     </div>
   </section>
 </Layout>

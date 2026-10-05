@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import { navBarLinks, identity } from "../config";
 import "../styles/global.css";
 import type { SEOInfo } from "../types/config";
@@ -9,46 +8,12 @@ interface Props {
 }
 
 const { seo } = Astro.props;
+const currentPath = Astro.url.pathname;
+const year = new Date().getFullYear();
+
+const isActive = (url: string) =>
+  url === "/" ? currentPath === "/" : currentPath.startsWith(url);
 ---
-
-<script>
-  const linkMenuButton = document.getElementById(
-    "link-menu-button"
-  ) as HTMLButtonElement;
-  const linkMenu = document.getElementById("link-menu") as HTMLDivElement;
-  const openIndicator = document.getElementById(
-    "open-indicator"
-  ) as HTMLSpanElement;
-
-  linkMenuButton?.addEventListener("click", () => {
-    if (linkMenu.classList.contains("opacity-0")) {
-      linkMenu.classList.remove("pointer-events-none");
-      linkMenu.classList.remove("opacity-0");
-      linkMenuButton.setAttribute("aria-expanded", "true");
-      openIndicator.innerText = "-";
-    } else {
-      linkMenu.classList.add("pointer-events-none");
-      linkMenu.classList.add("opacity-0");
-      linkMenuButton.setAttribute("aria-expanded", "false");
-      openIndicator.innerText = "+";
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    const isLinkMenuButtonClicked =
-      event.target === linkMenuButton ||
-      linkMenuButton.contains(event.target as Node);
-    const isLinkMenuClicked =
-      event.target === linkMenu || linkMenu.contains(event.target as Node);
-
-    if (!isLinkMenuButtonClicked && !isLinkMenuClicked) {
-      linkMenu.classList.add("pointer-events-none");
-      linkMenu.classList.add("opacity-0");
-      linkMenuButton?.setAttribute("aria-expanded", "false");
-      openIndicator.innerText = "+";
-    }
-  });
-</script>
 
 <html lang="en">
   <head>
@@ -56,6 +21,7 @@ const { seo } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#f3f1ea" />
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
     <meta property="og:title" content={seo.title} />
@@ -63,29 +29,29 @@ const { seo } = Astro.props;
     <meta property="og:image" content={seo.image} />
   </head>
   <body>
-    <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b0c0e]/70 backdrop-blur-xl">
-      <div
-        class="page-shell py-4 flex items-center justify-between"
-      >
-        <a href="/" class="group flex items-center gap-3">
-          <Image
-            src={identity.logo}
-            alt={"Logo"}
-            width={50}
-            height={50}
-            class="w-11 h-11 rounded-full object-cover ring-1 ring-white/15 transition-transform duration-300 group-hover:scale-105"
-          />
-          <span class="hidden text-sm font-semibold tracking-wide text-white/80 min-[420px]:inline">{identity.name}</span>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="sticky top-0 z-50 border-b border-[#cdccc3] bg-[#f3f1ea]/95 backdrop-blur-sm">
+      <div class="page-shell flex h-16 items-center justify-between">
+        <a href="/" class="text-sm font-bold tracking-[-0.02em]" aria-label={`${identity.name}, home`}>
+          IK<span class="text-[#d94f32]">.</span>
         </a>
-        <nav class="ml-auto mr-6 sm:m-0">
-          <ul class="hidden sm:flex sm:items-center sm:gap-2">
+
+        <nav class="hidden sm:block" aria-label="Main navigation">
+          <ul class="flex items-center gap-7">
             {
               navBarLinks.map((link) => (
                 <li>
                   <a
-                    class="group px-4 py-2 rounded-full text-sm text-white/60 hover:bg-white/10 hover:text-white transition-all"
+                    class:list={[
+                      "border-b pb-1 text-sm font-medium transition-colors hover:border-[#d94f32] hover:text-[#d94f32]",
+                      isActive(link.url)
+                        ? "border-[#191a17] text-[#191a17]"
+                        : "border-transparent text-[#65665f]",
+                    ]}
                     href={link.url}
                     target={link.external ? "_blank" : "_self"}
+                    rel={link.external ? "noreferrer" : undefined}
+                    aria-current={isActive(link.url) ? "page" : undefined}
                   >
                     {link.title}
                   </a>
@@ -93,44 +59,44 @@ const { seo } = Astro.props;
               ))
             }
           </ul>
-          <div class="relative sm:hidden">
-            <button
-              id="link-menu-button"
-              class="relative rounded-full border border-white/10 px-4 py-2 text-sm font-medium text-white/70"
-              aria-expanded="false"
-              aria-controls="link-menu"
-              >Menu <span id="open-indicator">+</span></button
-            >
-            <div
-              id="link-menu"
-              class="surface pointer-events-none absolute right-0 top-12 z-40 w-44 rounded-xl p-2 opacity-0 transition-opacity duration-300 ease-in-out"
-            >
-              <ul>
-                {
-                  navBarLinks.map((link) => (
-                    <li>
-                      <a
-                        class="block rounded-lg px-4 py-3 text-sm text-white/70 hover:bg-white/10 hover:text-white"
-                        href={link.url}
-                        target={link.external ? "_blank" : "_self"}
-                      >
-                        {link.title}
-                      </a>
-                    </li>
-                  ))
-                }
-              </ul>
-            </div>
-          </div>
         </nav>
+
+        <details class="relative sm:hidden">
+          <summary class="cursor-pointer list-none text-sm font-semibold marker:hidden">Menu</summary>
+          <nav class="absolute right-0 top-9 w-40 border border-[#cdccc3] bg-[#faf9f5] p-2" aria-label="Mobile navigation">
+            <ul>
+              {
+                navBarLinks.map((link) => (
+                  <li>
+                    <a
+                      class:list={[
+                        "block px-3 py-2.5 text-sm",
+                        isActive(link.url) ? "font-semibold text-[#191a17]" : "text-[#65665f]",
+                      ]}
+                      href={link.url}
+                      target={link.external ? "_blank" : "_self"}
+                      rel={link.external ? "noreferrer" : undefined}
+                      aria-current={isActive(link.url) ? "page" : undefined}
+                    >
+                      {link.title}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </details>
       </div>
     </header>
-    <main class="mb-32">
+
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
-    <footer class="page-shell pb-10 pt-4">
-      <div class="border-t border-white/10 pt-6 text-sm text-white/45">
-        Built with Astro. Written from production work, personal projects, and practical engineering tradeoffs.
+
+    <footer class="page-shell mt-28 pb-8 pt-10">
+      <div class="flex flex-col gap-3 border-t border-[#cdccc3] pt-5 text-xs text-[#65665f] sm:flex-row sm:items-center sm:justify-between">
+        <p>© {year} {identity.name}</p>
+        <p>Software, notes, and the thinking between them.</p>
       </div>
     </footer>
   </body>
